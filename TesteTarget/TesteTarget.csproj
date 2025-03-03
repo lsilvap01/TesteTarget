@@ -11,4 +11,13 @@
     <Folder Include="Dados\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Dados\dados %282%29.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Dados\dados.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
