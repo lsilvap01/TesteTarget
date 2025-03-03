@@ -23,7 +23,7 @@ bool isFibonacci(int n)
 
     return fn == n;
 }
-
+Console.WriteLine("---------- SOLUÇÂO QUESTÃO 2 ------------");
 //Número a ser testado
 int n = 55;
 var nIsFibonacci = isFibonacci(n);
@@ -53,7 +53,8 @@ void statsFaturamento(Faturamento[] faturamentos)
     Console.WriteLine($"Maior valor de faturamento ocorrido: R$ {maiorValorFat}");
     Console.WriteLine($"Número de dias no mês em que o valor de faturamento diário foi superior à média mensal: {qtdDiasComFatAcimaDaMedia}");
 }
-
+Console.WriteLine();
+Console.WriteLine("---------- SOLUÇÂO QUESTÃO 3 ------------");
 // Lê arquivo json com valores de faturamento
 string fonteDadosJson = "Dados/dados.json";
 string dadosJson = File.ReadAllText(fonteDadosJson);
@@ -85,7 +86,8 @@ void statsFaturamentoEstado(Dictionary<string, float> faturamentoUFs)
         Console.WriteLine($"{uf} - {fat.ToString("c2")} ({percentual} % do faturamento total)");
     }
 }
-
+Console.WriteLine();
+Console.WriteLine("---------- SOLUÇÂO QUESTÃO 4 ------------");
 var faturamentoUFs =  new Dictionary<string, float> {
     ["SP"] = 67836.43f,
     ["RJ"] = 36678.66f, 
