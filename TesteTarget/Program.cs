@@ -98,3 +98,33 @@ var faturamentoUFs =  new Dictionary<string, float> {
 
 // Exibe estatísticas do faturamento por Estado
 statsFaturamentoEstado(faturamentoUFs);
+
+/* Questão 5:
+ Escreva um programa que inverta os caracteres de um string. 
+ IMPORTANTE: 
+    a) Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código; 
+    b) Evite usar funções prontas, como, por exemplo, reverse;
+ */
+
+string inverteString(string s)
+{
+    var n = s.Length;
+    var s2 = "";
+
+    for (var i = n; i > 0; i--)
+    {
+        s2 += s[i - 1];
+    }
+
+    return s2;
+}
+
+Console.WriteLine();
+Console.WriteLine("---------- SOLUÇÂO QUESTÃO 5 ------------");
+// Define string a ser invertida
+var stringOriginal = "TESTE ABC";
+// Inverte string fornecida
+var stringInvertida = inverteString(stringOriginal);
+// Exibe valores originais e invertidos da string fornecida
+Console.WriteLine($"String original: {stringOriginal}");
+Console.WriteLine($"String invertida: {stringInvertida}");
