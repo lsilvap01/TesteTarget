@@ -61,3 +61,38 @@ Faturamento[] faturamentos = JsonSerializer.Deserialize<Faturamento[]>(dadosJson
 
 // Exibe estatísticas do faturamento JSON
 statsFaturamento(faturamentos);
+
+
+/* Questão 4:
+ Dado o valor de faturamento mensal de uma distribuidora, detalhado por estado: 
+• SP – R$67.836,43 
+• RJ – R$36.678,66 
+• MG – R$29.229,88 
+• ES – R$27.165,48 
+• Outros – R$19.849,53 
+Escreva um programa na linguagem que desejar onde calcule o percentual de representação que cada estado teve dentro do valor total mensal da distribuidora.
+ */
+
+void statsFaturamentoEstado(Dictionary<string, float> faturamentoUFs)
+{
+    var faturamentoTotal = faturamentoUFs.Values.Sum();
+    Console.WriteLine($"Percentual de representação que cada estado teve dentro do valor total mensal da distribuidora (faturamento total: {faturamentoTotal.ToString("c2")})");
+    foreach(var faturamento in  faturamentoUFs)
+    {
+        var uf = faturamento.Key;
+        var fat = faturamento.Value;
+        var percentual = (fat / faturamentoTotal) * 100;
+        Console.WriteLine($"{uf} - {fat.ToString("c2")} ({percentual} % do faturamento total)");
+    }
+}
+
+var faturamentoUFs =  new Dictionary<string, float> {
+    ["SP"] = 67836.43f,
+    ["RJ"] = 36678.66f, 
+    ["MG"] = 29229.88f,
+    ["ES"] = 27165.48f, 
+    ["Outros"] = 19849.53f
+};
+
+// Exibe estatísticas do faturamento por Estado
+statsFaturamentoEstado(faturamentoUFs);
